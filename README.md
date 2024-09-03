@@ -1,1 +1,1 @@
-# calculator-app
+# counter-app
