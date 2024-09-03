@@ -17,6 +17,12 @@ class _CounterPageState extends State<CounterPage> {
     });
   }
 
+  void _decrementCounter(){
+    setState(() {
+      _counter--;
+    });
+  }
+
 
   //UI
   @override
@@ -28,7 +34,14 @@ class _CounterPageState extends State<CounterPage> {
           children: [
             Text('you press the button many times'),
             Text(_counter.toString(),style: TextStyle(fontSize: 40),),
-            ElevatedButton(onPressed: _incrementCounter, child: Text("+",style: TextStyle(fontSize: 30),))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(onPressed: _incrementCounter, child: Text("+",style: TextStyle(fontSize: 30),)),
+                ElevatedButton(onPressed: _decrementCounter, child: Text("-",style: TextStyle(fontSize: 30),))
+
+              ],
+            )
           ],
         )
 
